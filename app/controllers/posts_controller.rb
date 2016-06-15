@@ -41,6 +41,7 @@ class PostsController < ApplicationController
   def destroy
     if @post.destroy
       flash[:success] = "Your post has been deleted"
+      redirect_to root_path
     else
       flash[:alert] = "Deletion failed. Please try again."
       redirect_to root_path
